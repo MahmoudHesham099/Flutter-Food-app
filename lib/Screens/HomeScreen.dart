@@ -161,37 +161,45 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: DotNavigationBar(
-        selectedItemColor: Colors.red,
-        margin: EdgeInsets.symmetric(horizontal: 30),
-        currentIndex: _selectedTab,
-        onTap: (index) {
-          setState(() {
-            _selectedTab = index;
-          });
-        },
-        items: [
-          DotNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            )),
+        child: DotNavigationBar(
+          selectedItemColor: Colors.red,
+          margin: EdgeInsets.symmetric(horizontal: 30),
+          currentIndex: _selectedTab,
+          onTap: (index) {
+            setState(() {
+              _selectedTab = index;
+            });
+          },
+          items: [
+            DotNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+              ),
             ),
-          ),
-          DotNavigationBarItem(
-            icon: Icon(
-              Icons.fastfood,
+            DotNavigationBarItem(
+              icon: Icon(
+                Icons.fastfood,
+              ),
             ),
-          ),
-          DotNavigationBarItem(
-            icon: Icon(
-              Icons.shopping_cart_outlined,
+            DotNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+              ),
             ),
-          ),
-          DotNavigationBarItem(
-            icon: Icon(
-              Icons.person_outlined,
+            DotNavigationBarItem(
+              icon: Icon(
+                Icons.person_outlined,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
